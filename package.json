@@ -1,0 +1,51 @@
+{
+  "name": "seo-express",
+  "version": "1.0.0",
+  "description": "SEO-Optimized & Secure Express.js Boilerplate",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "prerender": "node utils/prerender.js",
+    "minify:js": "node utils/jsMinifier.js public/js/main.js",
+    "build": "npm run prerender && npm run minify:js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "seo",
+    "nodejs",
+    "security",
+    "helmet",
+    "cors",
+    "jwt",
+    "mongodb",
+    "boilerplate"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.1",
+    "helmet": "^8.0.0",
+    "html-minifier-terser": "^7.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.3",
+    "multer": "^1.4.5-lts.1",
+    "sitemap": "^8.0.0",
+    "terser": "^5.37.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

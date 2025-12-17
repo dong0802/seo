@@ -1,0 +1,46 @@
+<%- include('../layouts/main', { body: ` <section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Blog</h1>
+        <p class="page-description">Latest articles and tutorials</p>
+    </div>
+    </section>
+
+    <section class="blog-section section">
+        <div class="container">
+            <div class="blog-grid">
+                ${typeof posts !== 'undefined' && posts.length > 0 ? posts.map(post => `
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <div class="image-placeholder">📝</div>
+                    </div>
+                    <div class="blog-card-content">
+                        <time class="blog-date" datetime="${post.date}">${new
+                            Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric'
+                            })}</time>
+                        <h2><a href="/blog/${post.slug}">${post.title}</a></h2>
+                        <p>${post.excerpt}</p>
+                        <a href="/blog/${post.slug}" class="read-more">
+                            Read More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                `).join('') : `
+                <div class="blog-empty">
+                    <p>No blog posts yet. Check back soon!</p>
+                </div>
+                `}
+            </div>
+
+            <!-- Pagination -->
+            <nav class="pagination" aria-label="Blog pagination">
+                <a href="#" class="pagination-btn disabled" aria-disabled="true">Previous</a>
+                <span class="pagination-info">Page 1 of 1</span>
+                <a href="#" class="pagination-btn disabled" aria-disabled="true">Next</a>
+            </nav>
+        </div>
+    </section>
+    ` }) %>

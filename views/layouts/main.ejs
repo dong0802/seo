@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title><%= seo.title %></title>
+    <meta name="title" content="<%= seo.title %>">
+    <meta name="description" content="<%= seo.description %>">
+    <% if (seo.keywords) { %>
+    <meta name="keywords" content="<%= seo.keywords %>">
+    <% } %>
+    <% if (seo.author) { %>
+    <meta name="author" content="<%= seo.author %>">
+    <% } %>
+    <meta name="robots" content="<%= seo.robots %>">
+    
+    <!-- Canonical URL (IMPORTANT!) -->
+    <link rel="canonical" href="<%= seo.canonical %>">
+    
+    <!-- Alternate Language Links -->
+    <% if (seo.alternates && seo.alternates.length > 0) { %>
+    <% seo.alternates.forEach(alt => { %>
+    <link rel="alternate" hreflang="<%= alt.lang %>" href="<%= alt.url %>">
+    <% }); %>
+    <% } %>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="<%= seo.ogType %>">
+    <meta property="og:url" content="<%= seo.canonical %>">
+    <meta property="og:title" content="<%= seo.title %>">
+    <meta property="og:description" content="<%= seo.description %>">
+    <meta property="og:image" content="<%= seo.ogImage %>">
+    <meta property="og:site_name" content="<%= seo.siteName %>">
+    <meta property="og:locale" content="vi_VN">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="<%= seo.twitterCard %>">
+    <meta property="twitter:url" content="<%= seo.canonical %>">
+    <meta property="twitter:title" content="<%= seo.title %>">
+    <meta property="twitter:description" content="<%= seo.description %>">
+    <meta property="twitter:image" content="<%= seo.ogImage %>">
+    <% if (seo.twitterSite) { %>
+    <meta property="twitter:site" content="<%= seo.twitterSite %>">
+    <% } %>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Preconnect to External Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    
+    <!-- Google Fonts (Inter - Modern & Clean) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Additional Styles -->
+    <%- typeof extraStyles !== 'undefined' ? extraStyles : '' %>
+    
+    <!-- JSON-LD Structured Data -->
+    <% if (seo.jsonLd) { %>
+    <script type="application/ld+json">
+    <%- Array.isArray(seo.jsonLd) ? JSON.stringify(seo.jsonLd) : JSON.stringify([seo.jsonLd]) %>
+    </script>
+    <% } %>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/css/style.css" as="style">
+    
+    <!-- DNS Prefetch for External Resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+</head>
+<body>
+    <!-- Skip Navigation Link (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <%- include('../partials/header') %>
+    
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <%- body %>
+    </main>
+    
+    <!-- Footer -->
+    <%- include('../partials/footer') %>
+    
+    <!-- JavaScript -->
+    <script src="/js/main.js" defer></script>
+    
+    <!-- Additional Scripts -->
+    <%- typeof extraScripts !== 'undefined' ? extraScripts : '' %>
+    
+    <!-- CSRF Token for AJAX (if available) -->
+    <% if (typeof csrfToken !== 'undefined') { %>
+    <script>
+        window.csrfToken = '<%= csrfToken %>';
+    </script>
+    <% } %>
+</body>
+</html>

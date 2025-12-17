@@ -1,0 +1,300 @@
+<%- include('../layouts/main', { body: ` <section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Documentation</h1>
+        <p class="page-description">Everything you need to know about SEO Express</p>
+    </div>
+    </section>
+
+    <section class="docs-section section">
+        <div class="container">
+            <div class="docs-layout">
+                <!-- Docs Sidebar -->
+                <aside class="docs-sidebar">
+                    <nav class="docs-nav">
+                        <div class="docs-nav-group">
+                            <h3>Getting Started</h3>
+                            <ul>
+                                <li><a href="#introduction" class="active">Introduction</a></li>
+                                <li><a href="#installation">Installation</a></li>
+                                <li><a href="#configuration">Configuration</a></li>
+                                <li><a href="#structure">Project Structure</a></li>
+                            </ul>
+                        </div>
+                        <div class="docs-nav-group">
+                            <h3>Features</h3>
+                            <ul>
+                                <li><a href="#seo">SEO Optimization</a></li>
+                                <li><a href="#security">Security Features</a></li>
+                                <li><a href="#performance">Performance</a></li>
+                                <li><a href="#authentication">Authentication</a></li>
+                            </ul>
+                        </div>
+                        <div class="docs-nav-group">
+                            <h3>API Reference</h3>
+                            <ul>
+                                <li><a href="#api-overview">Overview</a></li>
+                                <li><a href="#endpoints">Endpoints</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </aside>
+
+                <!-- Docs Content -->
+                <article class="docs-content">
+                    <div id="introduction">
+                        <h2>Introduction</h2>
+                        <p>Welcome to <strong>SEO Express</strong>, a production-ready boilerplate designed to help you
+                            build fast, secure, and SEO-friendly web applications with Express.js.</p>
+                        <p>Unlike other starters, we prioritize <strong>Search Engine Optimization</strong> (SEO) and
+                            <strong>Security</strong> from day one, so you don't have to worry about configuring these
+                            complex aspects later.</p>
+                    </div>
+
+                    <div id="installation">
+                        <h2>Installation</h2>
+                        <p>To get started, clone the repository and install dependencies:</p>
+                        <pre><code class="language-bash">git clone https://github.com/your-username/seo-express.git
+cd seo-express
+npm install</code></pre>
+
+                        <p>For development with hot-reload:</p>
+                        <pre><code class="language-bash">npm run dev</code></pre>
+
+                        <p>For production build and start:</p>
+                        <pre><code class="language-bash">npm run build
+npm start</code></pre>
+                    </div>
+
+                    <div id="configuration">
+                        <h2>Configuration</h2>
+                        <p>Copy the <code>.env.example</code> file to <code>.env</code> and update the values:</p>
+                        <pre><code class="language-bash">cp .env.example .env</code></pre>
+
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Variable</th>
+                                        <th>Description</th>
+                                        <th>Default</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>PORT</code></td>
+                                        <td>Server port</td>
+                                        <td>3000</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>SITE_URL</code></td>
+                                        <td>Your website URL (for SEO)</td>
+                                        <td>http://localhost:3000</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>MONGODB_URI</code></td>
+                                        <td>Database connection string</td>
+                                        <td>mongodb://localhost...</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>JWT_SECRET</code></td>
+                                        <td>Secret key for JWT tokens</td>
+                                        <td>(Set your own)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="structure">
+                        <h2>Project Structure</h2>
+                        <p>The project follows a modular structure for better maintainability:</p>
+                        <ul>
+                            <li><code>/config</code> - Configuration files (Database, etc.)</li>
+                            <li><code>/middleware</code> - Custom Express middleware</li>
+                            <li><code>/routes</code> - Application routes</li>
+                            <li><code>/utils</code> - Utility functions</li>
+                            <li><code>/views</code> - EJS templates</li>
+                            <li><code>/public</code> - Static files (CSS, JS, Images)</li>
+                        </ul>
+                    </div>
+
+                    <div id="seo">
+                        <h2>SEO Optimization</h2>
+                        <p>We handle the heavy lifting for SEO automatically:</p>
+                        <ul>
+                            <li><strong>Sitemap</strong>: Auto-generated at <code>/sitemap.xml</code></li>
+                            <li><strong>Robots.txt</strong>: Configurable at <code>/robots.txt</code></li>
+                            <li><strong>Meta Tags</strong>: Dynamic implementation via <code>res.setSEO()</code> helper
+                            </li>
+                            <li><strong>Structured Data</strong>: JSON-LD support for rich snippets</li>
+                        </ul>
+                        <h3>Usage in Routes</h3>
+                        <pre><code class="language-javascript">router.get('/about', (req, res) => {
+    res.setSEO({
+        title: 'About Us - My Site',
+        description: 'Learn more about us...',
+        keywords: 'about, company, team'
+    });
+    res.render('pages/about');
+});</code></pre>
+                    </div>
+
+                    <div id="security">
+                        <h2>Security Features</h2>
+                        <p>Security is baked in, not an afterthought:</p>
+                        <ul>
+                            <li><strong>Helmet</strong>: Sets secure HTTP headers</li>
+                            <li><strong>Rate Limiting</strong>: Protects against brute-force attacks</li>
+                            <li><strong>CSRF Protection</strong>: Secures forms against Cross-Site Request Forgery</li>
+                            <li><strong>Sanitization</strong>: Prevents NoSQL injection</li>
+                        </ul>
+                    </div>
+
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Documentation Specific Styles */
+        .docs-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: var(--spacing-8);
+        }
+
+        .docs-sidebar {
+            position: sticky;
+            top: 90px;
+            height: calc(100vh - 100px);
+            overflow-y: auto;
+            border-right: 1px solid var(--color-gray-200);
+            padding-right: var(--spacing-6);
+        }
+
+        .docs-nav-group {
+            margin-bottom: var(--spacing-8);
+        }
+
+        .docs-nav-group h3 {
+            font-size: var(--font-size-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-gray-500);
+            margin-bottom: var(--spacing-3);
+            font-weight: 700;
+        }
+
+        .docs-nav ul li {
+            margin-bottom: var(--spacing-2);
+        }
+
+        .docs-nav a {
+            color: var(--color-gray-600);
+            display: block;
+            padding: var(--spacing-1) 0;
+            transition: color var(--transition-fast);
+        }
+
+        .docs-nav a:hover,
+        .docs-nav a.active {
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+
+        .docs-content h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            margin: var(--spacing-12) 0 var(--spacing-6);
+            padding-bottom: var(--spacing-4);
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+
+        .docs-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .docs-content h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            margin: var(--spacing-8) 0 var(--spacing-4);
+        }
+
+        .docs-content p {
+            margin-bottom: var(--spacing-4);
+            color: var(--color-gray-700);
+        }
+
+        .docs-content ul {
+            margin-bottom: var(--spacing-6);
+            list-style: disc;
+            padding-left: var(--spacing-6);
+        }
+
+        .docs-content li {
+            margin-bottom: var(--spacing-2);
+            color: var(--color-gray-700);
+        }
+
+        /* Code Blocks */
+        pre {
+            background: var(--color-gray-900);
+            color: var(--color-gray-100);
+            padding: var(--spacing-4);
+            border-radius: var(--radius-lg);
+            overflow-x: auto;
+            margin-bottom: var(--spacing-6);
+        }
+
+        code {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9em;
+        }
+
+        p code,
+        li code {
+            background: var(--color-gray-100);
+            color: var(--color-primary-dark);
+            padding: 0.2rem 0.4rem;
+            border-radius: var(--radius-sm);
+        }
+
+        /* Tables */
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: var(--spacing-6);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: var(--spacing-3);
+            text-align: left;
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+
+        th {
+            background: var(--color-gray-50);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .docs-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .docs-sidebar {
+                position: static;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--color-gray-200);
+                margin-bottom: var(--spacing-8);
+                padding-bottom: var(--spacing-4);
+            }
+        }
+    </style>
+    ` }) %>

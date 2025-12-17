@@ -1,0 +1,213 @@
+<%- include('../layouts/main', { body: ` <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">🚀 SEO-Optimized & Secure</span>
+                <h1 id="hero-title" class="hero-title">
+                    Build <span class="gradient-text">Fast</span>, <span class="gradient-text">Secure</span> & <span
+                        class="gradient-text">SEO-Friendly</span> Web Apps
+                </h1>
+                <p class="hero-description">
+                    A production-ready Express.js boilerplate with built-in SEO optimization, security best practices,
+                    and performance tuning. Start building amazing web applications today.
+                </p>
+                <div class="hero-actions">
+                    <a href="/docs" class="btn btn-primary btn-lg">
+                        <span>Get Started</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com" class="btn btn-outline btn-lg" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        <span>View on GitHub</span>
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">100</span>
+                        <span class="stat-label">Lighthouse Score</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">A+</span>
+                        <span class="stat-label">Security Grade</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">&lt;1s</span>
+                        <span class="stat-label">Load Time</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features section" aria-labelledby="features-title">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Features</span>
+                <h2 id="features-title" class="section-title">Everything You Need to Build Great Apps</h2>
+                <p class="section-description">Our boilerplate comes packed with essential features for modern web
+                    development.</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- SEO Features -->
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <span>🔍</span>
+                    </div>
+                    <h3>SEO Optimized</h3>
+                    <p>Built-in sitemap.xml, robots.txt, canonical URLs, meta tags, and JSON-LD structured data for
+                        maximum search visibility.</p>
+                    <ul class="feature-list">
+                        <li>✓ Sitemap & Robots.txt</li>
+                        <li>✓ Open Graph & Twitter Cards</li>
+                        <li>✓ JSON-LD Structured Data</li>
+                        <li>✓ Canonical URLs</li>
+                    </ul>
+                </div>
+
+                <!-- Security Features -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <span>🛡️</span>
+                    </div>
+                    <h3>Enterprise Security</h3>
+                    <p>Comprehensive security measures including Helmet, CORS, CSRF protection, rate limiting, and input
+                        sanitization.</p>
+                    <ul class="feature-list">
+                        <li>✓ Helmet.js Protection</li>
+                        <li>✓ CSRF & XSS Prevention</li>
+                        <li>✓ Rate Limiting</li>
+                        <li>✓ MongoDB Sanitization</li>
+                    </ul>
+                </div>
+
+                <!-- Performance Features -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <span>⚡</span>
+                    </div>
+                    <h3>Blazing Fast</h3>
+                    <p>Optimized for Core Web Vitals with compression, caching, minification, and lazy loading out of
+                        the box.</p>
+                    <ul class="feature-list">
+                        <li>✓ GZIP Compression</li>
+                        <li>✓ HTML/CSS/JS Minification</li>
+                        <li>✓ Smart Caching</li>
+                        <li>✓ Core Web Vitals Ready</li>
+                    </ul>
+                </div>
+
+                <!-- Mobile First -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <span>📱</span>
+                    </div>
+                    <h3>Mobile First</h3>
+                    <p>Responsive design with mobile-first approach, touch-friendly interfaces, and PWA support.</p>
+                    <ul class="feature-list">
+                        <li>✓ Responsive Design</li>
+                        <li>✓ PWA Ready</li>
+                        <li>✓ Touch Optimized</li>
+                        <li>✓ AMP Compatible</li>
+                    </ul>
+                </div>
+
+                <!-- Authentication -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <span>🔐</span>
+                    </div>
+                    <h3>JWT Authentication</h3>
+                    <p>Secure authentication system with JWT tokens, bcrypt password hashing, and role-based access
+                        control.</p>
+                    <ul class="feature-list">
+                        <li>✓ JWT Tokens</li>
+                        <li>✓ Bcrypt Hashing</li>
+                        <li>✓ Role-Based Access</li>
+                        <li>✓ Token Refresh</li>
+                    </ul>
+                </div>
+
+                <!-- File Upload -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <span>📁</span>
+                    </div>
+                    <h3>Secure Uploads</h3>
+                    <p>Safe file uploads with type validation, size limits, and secure filename generation using Multer.
+                    </p>
+                    <ul class="feature-list">
+                        <li>✓ File Type Validation</li>
+                        <li>✓ Size Limits</li>
+                        <li>✓ Secure Filenames</li>
+                        <li>✓ Image Optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack section section-dark" aria-labelledby="tech-title">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Tech Stack</span>
+                <h2 id="tech-title" class="section-title">Built with Modern Technologies</h2>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-logo">📦</div>
+                    <span>Node.js</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">🚂</div>
+                    <span>Express.js</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">🍃</div>
+                    <span>MongoDB</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">📄</div>
+                    <span>EJS</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">🛡️</div>
+                    <span>Helmet</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">🔐</div>
+                    <span>JWT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section" aria-labelledby="cta-title">
+        <div class="container">
+            <div class="cta-content">
+                <h2 id="cta-title">Ready to Get Started?</h2>
+                <p>Start building your next project with our SEO-optimized Express.js boilerplate.</p>
+                <div class="cta-actions">
+                    <a href="/contact" class="btn btn-primary btn-lg">Contact Us</a>
+                    <a href="/docs" class="btn btn-ghost btn-lg">Read Docs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    ` }) %>

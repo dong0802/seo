@@ -1,0 +1,74 @@
+<%- include('../layouts/main', { body: ` <section class="page-header">
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">About</span>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
+        </nav>
+        <h1 class="page-title">About Us</h1>
+        <p class="page-description">Learn about our mission to make web development better</p>
+    </div>
+    </section>
+
+    <section class="about-section section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>Our Mission</h2>
+                    <p>We believe that every developer deserves access to high-quality, production-ready tools that make
+                        building web applications faster, more secure, and SEO-friendly.</p>
+                    <p>Our Express.js boilerplate was born from years of experience building web applications and
+                        learning what works best in production. We've distilled all that knowledge into a single,
+                        comprehensive starting point.</p>
+
+                    <h3>What We Offer</h3>
+                    <ul>
+                        <li>🚀 <strong>Production-Ready Code</strong> - Battle-tested patterns and best practices</li>
+                        <li>🛡️ <strong>Enterprise Security</strong> - Comprehensive protection out of the box</li>
+                        <li>🔍 <strong>SEO Excellence</strong> - Everything you need for search visibility</li>
+                        <li>⚡ <strong>Performance First</strong> - Optimized for Core Web Vitals</li>
+                    </ul>
+                </div>
+
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <span>🎯</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Values</h2>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation</h3>
+                    <p>We constantly explore new technologies and approaches to improve our tools.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Community</h3>
+                    <p>We believe in open source and giving back to the developer community.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">✨</div>
+                    <h3>Quality</h3>
+                    <p>We never compromise on code quality, security, or user experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    ` }) %>
